@@ -14,7 +14,7 @@ const fs = require('fs');
     const page = await browser.newPage();
 
     try {
-      await page.goto(url);
+      await page.goto(`https://anichiri.to${url}`);
 
       await page.waitForSelector('.d[title="Download"]');
 
