@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
 
   const urls = fs.readFileSync('urls.txt', 'utf-8').split('\n');
 
@@ -22,10 +22,10 @@ const fs = require('fs');
 
       await page.waitForSelector('.dl[title="Save to disk"]', { timeout: 600000 });
       await page.waitForTimeout(2500);
-      console.log(`Đã tải xuống từ ${url}`);
+      console.log(`Downloaded ${url}`);
 
     } catch (error) {
-      console.error(`Lỗi khi tải xuống từ ${url}: ${error}`);
+      console.error(`An error occurred when download from ${url}: ${error}`);
     } finally {
       await page.close();
     }
