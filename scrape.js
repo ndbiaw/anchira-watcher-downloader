@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: 'new' });
 
   const urls = fs.readFileSync('urls.txt', 'utf-8').split('\n');
 
