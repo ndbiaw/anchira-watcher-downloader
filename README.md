@@ -19,7 +19,7 @@ You just need to run build.js with the following command:
 node build.js
 ```
 ### Download manga from the list of available URLs
-Put the list of URLs you need to downloadload into the urls.txt file and run scrape.js with the following command:
+Put the list of URLs you need to downloadl into the urls.txt file and run scrape.js with the following command:
 ```sh
 node scrape.js
 ```
