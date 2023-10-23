@@ -3,7 +3,7 @@ const fs = require('fs');
 const readline = require('readline');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   await page.goto('https://anchira.to/');
@@ -36,7 +36,7 @@ const readline = require('readline');
     await page.waitForSelector('.d[title="Download"]');
     await page.click('.d[title="Download"]');
     await page.waitForSelector('.dl[title="Save to disk"]', { timeout: 600000 });
-    console.log(`Đã tải xuống từ ${url}`);
+    console.log(`Downloaded ${url}`);
     downloadedUrls.add(url);
 
     await page.waitForTimeout(2500);
