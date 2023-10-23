@@ -18,7 +18,7 @@ async function scrapePage(page) {
 }
 
 async function scrapeSite() {
-  const browser = await puppeteer.launch({headless: false});
+  const browser = await puppeteer.launch({headless: true});
   const page = await browser.newPage();
 
   for (let pageNum = 512; pageNum >= 1; pageNum--) {
